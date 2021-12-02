@@ -3,7 +3,9 @@ package com.trailapps.cicddemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 @SpringBootApplication
 public class CiCdDemoApplication {
 
@@ -13,7 +15,7 @@ public class CiCdDemoApplication {
 
 	@GetMapping
 	public String hello(){
-		return "<h1> CI CD demo dfgdfgdfg </h1>";
+		return "<h1> CI CD demo </h1>";
 	}
 
 }
