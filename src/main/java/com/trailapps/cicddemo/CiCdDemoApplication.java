@@ -11,4 +11,9 @@ public class CiCdDemoApplication {
 		SpringApplication.run(CiCdDemoApplication.class, args);
 	}
 
+	@GetMapping
+	public String hello(){
+		return "<h1> CI CD demo dfgdfgdfg </h1>";
+	}
+
 }
