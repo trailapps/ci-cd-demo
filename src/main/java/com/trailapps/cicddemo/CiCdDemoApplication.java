@@ -15,7 +15,7 @@ public class CiCdDemoApplication {
 
 	@GetMapping
 	public String hello(){
-		return "<h1> CI CD demo dsfsd</h1>";
+		return "<h1> CI CD demo</h1>";
 	}
 
 }
