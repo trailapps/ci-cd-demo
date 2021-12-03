@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SpringBootApplication
-public class CiCdDemoApplication {
+public class Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CiCdDemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-	@GetMapping
-	public String hello(){
-		return "<h1> CI CD demo</h1>";
-	}
+    @GetMapping
+    public String hello() {
+        return "<h1> CI CD demo</h1>";
+    }
 
 }

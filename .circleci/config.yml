@@ -6,7 +6,7 @@ jobs:
       - image: openjdk:16-alpine
     steps:
       - checkout
-        # Download and cache dependencies
+      # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "build.gradle" }}
@@ -48,11 +48,23 @@ jobs:
   deploy:
     docker:
       - image: docker:dind
+    environment:
+      SPRING_PROFILES_ACTIVE: $SPRING_PROFILES_ACTIVE
+      USER: Tom
     steps:
       - setup_remote_docker:
           version: 19.03.13
       - attach_workspace:
           at: ./
+      - run:
+          name: Test environment variable (Spring active profiles)
+          command: echo $SPRING_PROFILES_ACTIVE
+      - run:
+          name: Set custom environment variable
+          command: echo WORDPRESS_USER="$USER" >> "${BASH_ENV}"
+      - run:
+          name: Test custom environment variable
+          command: echo $WORDPRESS_USER
       - run: apk add --no-cache curl
       - run:
           name: "Patch the container hosted in heroku"
