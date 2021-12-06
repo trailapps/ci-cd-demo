@@ -98,5 +98,6 @@ workflows:
           requires:
             - package
       - release-prod:
+          type: approval
           requires:
             - deploy
