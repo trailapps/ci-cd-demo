@@ -53,12 +53,6 @@ jobs:
           version: 19.03.13
       - attach_workspace:
           at: ./
-      - run:
-          name: "Profile active wo {}"
-          command: echo $SPRING_PROFILES_ACTIVE
-      - run:
-          name: "Profile active with {}"
-          command: echo ${SPRING_PROFILES_ACTIVE}
       - run: apk add --no-cache curl
       - run:
           name: "Patch the container hosted in heroku"
@@ -73,12 +67,6 @@ jobs:
           version: 19.03.13
       - attach_workspace:
           at: ./
-      - run:
-          name: "Profile active wo {}"
-          command: echo $SPRING_PROFILES_ACTIVE
-      - run:
-          name: "Profile active with {}"
-          command: echo ${SPRING_PROFILES_ACTIVE}
       - run: apk add --no-cache curl
       - run:
           name: "Patch the container hosted in heroku"
